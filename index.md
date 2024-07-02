@@ -9,7 +9,7 @@ The goal of this project is to analyze global population data and derive valuabl
 
 #### Data Collection
 
-The dataset was sourced from [Our World in Data](https://ourworldindata.org/population-growth){:target="_blank"} (*see complete attribution at the end*). It contains about 18,000 rows of population data for over 200 countries from 1950 to 2021. 
+The dataset was sourced from [Our World in Data](https://ourworldindata.org/population-growth){:target="_blank"} (*see complete attribution below*). It contains about 18,000 rows of population data for over 200 countries from 1950 to 2021. 
 <br><br>
 
 #### Importing Data 
