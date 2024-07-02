@@ -1,4 +1,4 @@
-Population Growth Data Exploration using SQL
+<img id = "pop_banner" src="assets/images/pop_growth.jpg"/>
 <br>
 <br>
 
