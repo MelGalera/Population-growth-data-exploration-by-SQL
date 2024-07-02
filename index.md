@@ -185,7 +185,7 @@ FROM population_and_demography;
 
 <br>
 
-**Question 1:** What is the population of people aged 90+ in each country? 
+**Question 1:** Which countries (top 25) have the highest population of people aged 90+? 
 
 ```sql
 SELECT 
@@ -194,12 +194,15 @@ SELECT
 	population_90_to_99 + population_100_above AS pop_90_above
 FROM population_and_demography
 WHERE population_year = 2021 and record_type = 'Country'
-ORDER BY country_name;
+ORDER BY pop_90_above DESC
+LIMIT 25;
 ```
+![](/assets/images/Q1.png)
+
 <br>
 <br>
 
-**Question 2:** Which countries have the highest population growth in the last year (number of people, and by percentage)?
+**Question 2:** Which countries (top 25, based on number) have the highest population growth in the last year (number of people, and by percentage)?
 
 ```sql
 SELECT 
@@ -227,12 +230,15 @@ FROM (
 	WHERE p.record_type = 'Country'
 	AND p.population_year = 2021
 ) p3
-ORDER BY pop_growth_num DESC;
+ORDER BY pop_growth_num DESC
+LIMIT 25;
 ```
+![](/assets/images/Q2.png)
+
 <br>
 <br>
 
-**Question 3:** Which single country has the highest population decline in the last year? 
+**Question 3:** Which countries (top 25) have the highest population decline in the last year? 
 
 ```sql
 SELECT 
@@ -261,8 +267,9 @@ FROM (
 	AND p.population_year = 2021
 ) p3
 ORDER BY pop_growth_num ASC
-LIMIT 1;
+LIMIT 25;
 ```
+![](/assets/images/Q3.png)
 <br>
 <br>
 
@@ -302,6 +309,8 @@ FROM population_and_demography
 WHERE country_name = 'World' AND population_year = 2021
 ORDER BY population DESC;
 ```
+![](/assets/images/Q4.png)
+
 <br>
 <br>
 
@@ -336,10 +345,12 @@ FROM (
 ORDER BY pop_growth_num DESC
 LIMIT 10;
 ```
+![](/assets/images/Q5.png)
+
 <br>
 <br>
 
-**Question 6:** Which country has the highest percentage growth since the first year (1950)? 
+**Question 6:** Which countries (top 25) have the highest percentage growth since the first year (1950)?
 
 ```sql
 CREATE VIEW population_by_year AS
@@ -390,12 +401,15 @@ SELECT
 	population_2021,
 	ROUND(CAST((population_2021 - population_1950) AS DECIMAL) / population_1950 * 100, 2) AS pop_growth_pct
 FROM population_by_year
-ORDER BY pop_growth_pct DESC;
+ORDER BY pop_growth_pct DESC
+LIMIT 25;
 ```
+![](/assets/images/Q6.png)
+
 <br>
 <br>
 
-**Question 7:** Which country has the highest population at age 1 as a percentage of their overall population? 
+**Question 7:** Which countries (top 25) have the highest population at age 1 as a percentage of their overall population?
 
 ```sql
 SELECT 
@@ -406,12 +420,15 @@ SELECT
 FROM population_and_demography
 WHERE record_type = 'Country'
 AND population_year = 2021
-ORDER BY pop_ratio DESC;
+ORDER BY pop_ratio DESC
+LIMIT 25;
 ```
+![](/assets/images/Q7.png)
+
 <br>
 <br>
  
- **Question 8:** What is the population of each continent in each year, and how much has it changed each year? 
+ **Question 8:** What is the population of each region/continent in each year, and how much has it changed each year? Show first 25 of Africa. 
 
 ```sql
 SELECT
@@ -425,6 +442,9 @@ FROM population_and_demography
 WHERE record_type = 'Continent'
 ORDER BY country_name ASC, population_year ASC;
 ```
+![](/assets/images/Q1.png)
 
+<br>
+<br>
 <br>
 <br>
