@@ -2,7 +2,24 @@ Population Growth Data Exploration using SQL
 <br>
 <br>
 
-### PART A. Data preprocessing  
+#### Overview
+
+The goal of this project is to analyze global population data and derive valuable insights and trends on growth or decline of the distribution of people by country or worldwide. 
+<br><br>
+
+#### Data Collection
+
+The dataset was sourced from [Our World in Data](https://ourworldindata.org/population-growth){:target="_blank"} (*see complete attribution at the end*). It contains about 18,000 rows of population data for over 200 countries from 1950 to 2021. 
+<br><br>
+
+#### Importing Data 
+
+This project was carried out using DBeaver connected to PostgreSQL database which was used to import the data and perform SQL queries. 
+<br><br> 
+
+#### Data preprocessing
+
+Before exploring the data, the following were done.
 
 ```sql
 /* Change column names */
@@ -181,8 +198,9 @@ FROM population_and_demography;
 <br>
 <br>
 
-### PART B. Data exploration: Questions 
+####  Data exploration (Questions)
 
+SQL queries were used to answer questions to give insights on population growth.
 <br>
 
 **Question 1:** Which countries (top 25) have the highest population of people aged 90+? 
@@ -442,7 +460,13 @@ FROM population_and_demography
 WHERE record_type = 'Continent'
 ORDER BY country_name ASC, population_year ASC;
 ```
-![](/assets/images/Q1.png)
+![](/assets/images/Q8.png)
+
+<br>
+<br>
+##### Data source attribution:
+
+*Hannah Ritchie, Lucas Rodés-Guirao, Edouard Mathieu, Marcel Gerber, Esteban Ortiz-Ospina, Joe Hasell and Max Roser (2023) - “Population Growth” Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/population-growth' [Online Resource]*
 
 <br>
 <br>
